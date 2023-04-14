@@ -1,5 +1,6 @@
 import Title from "./components/Title";
 import { Content } from "./components/content";
+import "./components/styles.css"
 
 export default function App() {
   return (
