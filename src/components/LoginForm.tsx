@@ -1,12 +1,8 @@
 import React from "react";
-
-interface LoginFormForm {
-  email: string;
-  password: string;
-}
+import { User } from "../domain/user";
 
 class LoginForm extends React.Component {
-  state: LoginFormForm;
+  state: User;
 
   constructor(smth: any) {
     super(smth); // fix the annoying warning in the console
@@ -35,6 +31,7 @@ class LoginForm extends React.Component {
         <div className="email-container">
           <div className="label">Email</div>
           <input
+            placeholder="entrez une valeur"
             className="input"
             onChange={(e: any) => {
               return this.setState({
@@ -48,6 +45,7 @@ class LoginForm extends React.Component {
           <div className="label">Password</div>
           <input
             className="input"
+            placeholder="entrez une valeur"
             onChange={(e: any) => {
               return this.setState({
                 email: this.state.email,
