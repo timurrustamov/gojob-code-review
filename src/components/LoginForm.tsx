@@ -1,19 +1,15 @@
 import React from "react";
-
-interface LoginFormForm {
-  email: string;
-  password: string;
-}
+import { User } from "../domain/user";
 
 class LoginForm extends React.Component {
-  state: LoginFormForm;
+  state: User;
 
   constructor(smth: any) {
     super(smth); // fix the annoying warning in the console
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
 
     this.clickOnButton = this.clickOnButton.bind(this);
@@ -30,38 +26,37 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={(e) => this.handlePreventDefault(e)}
-        className="p-4 border border-gray text-xl"
-      >
+      <form onSubmit={(e) => this.handlePreventDefault(e)} className="form">
         Please log-in !
-        <div className="mt-4">
-          <div className="text-base">Email</div>
+        <div className="email-container">
+          <div className="label">Email</div>
           <input
-            className="border border-gray-200"
+            placeholder="entrez une valeur"
+            className="input"
             onChange={(e: any) => {
               return this.setState({
                 email: e.target.value,
-                password: this.state.password
+                password: this.state.password,
               });
             }}
           />
         </div>
-        <div className="mt-4 mb-8">
-          <div className="text-base">Password</div>
+        <div className="password-container">
+          <div className="label">Password</div>
           <input
-            className="border border-gray-200"
+            className="input"
+            placeholder="entrez une valeur"
             onChange={(e: any) => {
               return this.setState({
                 email: this.state.email,
-                password: e.target.value
+                password: e.target.value,
               });
             }}
           />
         </div>
         <div>
           <input
-            className="bg-blue-500 text-white p-2 rounded relative float-left left-1/2 -translate-x-1/2"
+            className="login-button"
             type="submit"
             value="Log-in"
             onClick={this.clickOnButton}

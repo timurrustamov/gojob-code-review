@@ -16,25 +16,25 @@ export const Content = () => {
   }, [currentHash]);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex w-full" style={{ background: "#eee" }}>
+    <div className="container">
+      <div className="login-tab" style={{ background: "#eee" }}>
         <div
-          className="w-1/2 p-2"
+          className="login-tab-label"
           onClick={() => setHash("login")}
           style={{
             background: currentHash === "login" ? "#0152c7" : "",
-            color: currentHash === "login" ? "white" : ""
+            color: currentHash === "login" ? "white" : "",
           }}
         >
           Login
         </div>
         <div
           onClick={() => setHash("signup")}
-          className="w-1/2 p-2"
+          className="login-tab-label"
           style={{
             width: "50%",
             background: currentHash === "signup" ? "#0152c7" : "",
-            color: currentHash === "signup" ? "white" : ""
+            color: currentHash === "signup" ? "white" : "",
           }}
         >
           Signup
