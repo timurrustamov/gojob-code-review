@@ -1,3 +1,4 @@
+import React from "react";
 import { LoginForm } from "./components/LoginForm";
 import Title from "./components/Title";
 import "./components/styles.css";
