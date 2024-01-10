@@ -1,6 +1,6 @@
 import Title from "./components/Title";
-import { Content } from "./components/content";
-import "./components/styles.css"
+import "./components/styles.css";
+import LoginForm from "./components/LoginForm";
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
         <div className="m-4">
           <Title>Welcome to Gojob !</Title>
         </div>
-        <Content />
+        <LoginForm />
       </div>
     </div>
   );
