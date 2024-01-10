@@ -1,11 +1,11 @@
 import React from "react";
 import { User } from "../domain/user";
 
-class LoginForm extends React.Component {
+export class LoginForm extends React.Component {
   state: User;
 
   constructor(smth: any) {
-    super(smth); // fix the annoying warning in the console
+    super(smth);
 
     this.state = {
       email: "",
@@ -26,45 +26,45 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(e) => this.handlePreventDefault(e)} className="form">
-        Please log-in !
-        <div className="email-container">
-          <div className="label">Email</div>
-          <input
-            placeholder="entrez une valeur"
-            className="input"
-            onChange={(e: any) => {
-              return this.setState({
-                email: e.target.value,
-                password: this.state.password,
-              });
-            }}
-          />
-        </div>
-        <div className="password-container">
-          <div className="label">Password</div>
-          <input
-            className="input"
-            placeholder="entrez une valeur"
-            onChange={(e: any) => {
-              return this.setState({
-                email: this.state.email,
-                password: e.target.value,
-              });
-            }}
-          />
-        </div>
-        <div>
-          <input
-            className="login-button"
-            type="submit"
-            value="Log-in"
-            onClick={this.clickOnButton}
-          />
-        </div>
-      </form>
+      <>
+        <form onSubmit={(e) => this.handlePreventDefault(e)} className="form">
+          Please log-in !
+          <div className="email-container">
+            <div className="label">Email</div>
+            <input
+              placeholder="entrez une valeur"
+              className="input"
+              onChange={(e: any) => {
+                return this.setState({
+                  email: e.target.value,
+                  password: this.state.password,
+                });
+              }}
+            />
+          </div>
+          <div className="password-container">
+            <div className="label">Password</div>
+            <input
+              className="input"
+              placeholder="entrez une valeur"
+              onChange={(e: any) => {
+                return this.setState({
+                  email: this.state.email,
+                  password: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <div>
+            <input
+              className="login-button"
+              type="submit"
+              value="Log-in"
+              onClick={this.clickOnButton}
+            />
+          </div>
+        </form>
+      </>
     );
   }
 }
-
-export default LoginForm;
