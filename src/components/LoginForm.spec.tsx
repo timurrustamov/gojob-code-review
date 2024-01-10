@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import LoginForm from "./LoginForm";
 import userEvent from "@testing-library/user-event";
+import { LoginForm } from "./LoginForm";
 
 it("works correctly", async () => {
   render(<LoginForm />);
